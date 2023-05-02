@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Jogo da Velha</title>
+</head>
+<body>
+<main>
+    <span class="vez">VEZ: <span>X</span></span>
+
+    <div class="jogo">
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+        <div class="casa"></div>
+    </div>
+
+    <div class="placar">
+        <div>
+            <span>X</span><span  class="p1">0</span>
+        </div>
+        <span class="vs">vs</span>
+        <div>
+            <span class="p2">0</span><span>O</span>
+        </div>
+    </div>
+    <div class="botoes">
+        <button class="botao">Reiniciar Jogo</button>
+        <button class="botao">Zerar Placar</button>
+    </div>
+
+    <div class="fade fade-desativado"></div>
+    <div class="modal modal-desativado">
+        <div class="modal-flex">
+            <span class="resultado"><span>X</span>VENCEU!</span>
+        </div>
+            <button class="botao botao-modal">Jogar Novamente</button>
+</div>
+</main>
+
+<script type="text/javascript" src="script.js"></script>
+</body>
+</html>
