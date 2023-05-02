@@ -268,7 +268,7 @@ main {
         padding: 1rem 1.5rem;
     }
 }
-@media (min-width: 1000px) and (max-height: 800px){
+@media (min-width: 1000px) and (min-height: 500px){
     html {
         font-size: 80%;
     }
@@ -292,7 +292,20 @@ main {
     }
 
     .modal-ativo {
-        top: -10%;
+        top: 0%;
     }
+}
+
+.ativo {
+    display: block;
+}
+
+.desativo {
+    display: none;
+}
+
+.ganhador {
+    margin-top: 2rem;
+    text-align: center;
 }
 

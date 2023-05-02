@@ -6,7 +6,7 @@ const casas = document.querySelectorAll(".casa"),
     fade = document.querySelector('.fade'),
     vez = document.querySelector('.vez span'),
     resultado = document.querySelector('.resultado'),
-    ganhador = document.querySelector('.resultado span'),
+    ganhador = document.querySelector('.ganhador'),
     p1 = document.querySelector('.p1'),
     p2 = document.querySelector('.p2'),
     combinacao =  [
@@ -19,6 +19,24 @@ const casas = document.querySelectorAll(".casa"),
         [0, 4, 8],
         [2, 4, 6],
     ]
+
+//mostra ou nao o ganhador
+function mostra(texto) {
+    if(texto === 'X' || texto === "O") {
+        if(ganhador.classList.contains('desativo')){
+            ganhador.classList.remove('desativo')
+        }
+            ganhador.classList.add('ativo')
+            resultado.innerText = "VENCEU!"
+            resultado.style.marginTop = '0px'
+    } else {
+        if(ganhador.classList.contains('ativo')){
+            ganhador.classList.remove('ativo')
+        }
+            ganhador.classList.add('desativo')
+            resultado.style.marginTop = '4rem'
+    }
+}
 
 //muda o placar de jogo
 function mudarPlacar() {
@@ -95,11 +113,14 @@ casas.forEach((casa, indice) => {
                 casa.innerText = 'X'
                 console.log(verificarCombinacao())
                 if(todasMarcadas() == true) {
+                    ganhador.innerText = ''
+                    mostra(ganhador.innerText)
                     resultado.innerHTML = 'EMPATE!'
                     modalOn()
                 }
                 if(verificarCombinacao() == true) {
                     ganhador.innerText = 'X'
+                    mostra(ganhador.innerText)
                     modalOn()
                    p1.innerText = mudarPlacar()
                 }
@@ -107,11 +128,14 @@ casas.forEach((casa, indice) => {
             } else if(vez.innerText === 'O') {
                 casa.innerText = 'O'
                 if(todasMarcadas() == true) {
+                    ganhador.innerText = ''
+                    mostra(ganhador.innerText)
                     resultado.innerHTML = 'EMPATE!'
                     modalOn()
                 }
                 if(verificarCombinacao() == true) {
                     ganhador.innerText = 'O'
+                    mostra(ganhador.innerText)
                     modalOn()
                     p2.innerText = mudarPlacar()
                 }
